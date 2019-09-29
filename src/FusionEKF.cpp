@@ -72,9 +72,6 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       
 
     // first measurement
-    cout << "EKF: " << endl;
-    ekf_.x_ = VectorXd(4);
-    ekf_.x_ << 1, 1, 1, 1;
 
     if (measurement_pack.sensor_type_ == MeasurementPackage::RADAR) {
       // TODO: Convert radar from polar to cartesian coordinates 
@@ -84,8 +81,8 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
         float rho_dot = measurement_pack.raw_measurements_[2];//rate
         
         //Normalize
-        while(phi>M_PI) phi -=2.*M_PI;
-        while(phi<M_PI) phi +=2.*M_PI;
+        while(phi> M_PI) phi -= 2.0 * M_PI;
+        while(phi < -M_PI) phi += 2.0 * M_PI;
         
         //convert to cartesian
         float x = rho*cos(phi);
@@ -100,7 +97,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
         float x = measurement_pack.raw_measurements_[0];
         float y = measurement_pack.raw_measurements_[1];
         
-        ekf_.x_ <<x,y,0,0;
+        ekf_.x_ << x,y,0,0;
     }
     
     
@@ -124,6 +121,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     float noise_ax = 9.;
     float noise_ay = 9.;
     float dt = (measurement_pack.timestamp_ - previous_timestamp_)/ 1000000.0;
+    previous_timestamp_ = measurement_pack.timestamp_;
     
     ekf_.F_(0,2) = dt;
     ekf_.F_(1,3) = dt;
@@ -132,10 +130,10 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     float dt_4 = dt_3*dt;
     
     ekf_.Q_ = MatrixXd(4,4);
-    ekf_.Q_ << dt_4/4*noise_ax,0,dt_3/2*noise_ax,0,
-            0,dt_4/4*noise_ay,0,dt_3/2*noise_ay,
-            dt_3/2*noise_ax, 0, dt_2*noise_ax, 0,
-            0, dt_3/2*noise_ay, 0, dt_2*noise_ay;
+    ekf_.Q_ << dt_4/4*noise_ax,0.,dt_3/2*noise_ax,0.,
+            0.,dt_4/4*noise_ay,0.,dt_3/2*noise_ay,
+            dt_3/2*noise_ax, 0., dt_2*noise_ax, 0.,
+            0., dt_3/2*noise_ay, 0., dt_2*noise_ay;
 
     ekf_.Predict();
 
@@ -157,7 +155,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
   } else {
     // TODO: Laser updates
       ekf_.H_ = H_laser_;
-      ekf_.R_ =R_laser_;
+      ekf_.R_ = R_laser_;
       ekf_.Update(measurement_pack.raw_measurements_);
   }
 

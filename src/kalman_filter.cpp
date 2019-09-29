@@ -65,8 +65,8 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
     VectorXd y = z- polar_v;
     // Normalize
     
-    while(y(1)>M_PI) y(1) -=2.*M_PI;
-    while(y(1)<M_PI) y(1) +=2.*M_PI;
+    while(y[1]>M_PI) y[1] -=2.*M_PI;
+    while(y[1]<-M_PI) y[1] +=2.*M_PI;
     
     UpdateCommon(y,Hj);
 }

@@ -44,10 +44,10 @@ RM = /usr/local/Cellar/cmake/3.15.3/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Karman-Filter
+CMAKE_SOURCE_DIR = /Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Kalman-Filter
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Karman-Filter/build
+CMAKE_BINARY_DIR = /Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Kalman-Filter/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ preinstall:
 CMakeFiles/ExtendedKF.dir/all:
 	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/depend
 	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Karman-Filter/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target ExtendedKF"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Kalman-Filter/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target ExtendedKF"
 .PHONY : CMakeFiles/ExtendedKF.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ExtendedKF.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Karman-Filter/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Kalman-Filter/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ExtendedKF.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Karman-Filter/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kibaekjeong/Documents/GitHub/SelfDrivingCar---Extended-Kalman-Filter/build/CMakeFiles 0
 .PHONY : CMakeFiles/ExtendedKF.dir/rule
 
 # Convenience name for target.

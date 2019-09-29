@@ -1,8 +1,14 @@
 # Extended Kalman Filter Project
-
+---
 In this project we will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements.
 
-## Input and Output of the program
+[//]: # (Image References)
+
+[image1]: ./images/output1.png "Output"
+[image2]: ./images/output2.png "Output"
+
+---
+### Input and Output of the program
 **INPUT**: values provided by the simulator to the c++ program
 
 ["sensor_measurement"] => the measurement that the simulator observed (either lidar or radar)
@@ -22,12 +28,18 @@ In this project we will utilize a kalman filter to estimate the state of a movin
 
 ["rmse_vy"]
 
-## Output from the Simulator
+### Output from the Simulator
+Here are the output of the final model.
+
+![alt text][image1]
+
+![alt text][image2]
+
 
 ---
-## Simulator
+### Simulator
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases).
-## Important Dependencies
+### Important Dependencies
 * [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems.
 * [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) for Windows system.
 * cmake >= 3.5
@@ -41,7 +53,7 @@ This project involves the Term 2 Simulator which can be downloaded [here](https:
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 
-## Basic Build Instructions
+### Basic Build Instructions
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
