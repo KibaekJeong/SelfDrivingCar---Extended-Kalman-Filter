@@ -1,6 +1,6 @@
 # Extended Kalman Filter Project
 ---
-In this project we will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. In this project, C++ is used to build Extended Kalman filter, detecting objects and estimate the state of a moving object. 
+In this project we will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Extended Kalman filter is built using C++, detecting objects and estimate the state of a moving object. 
 
 [//]: # (Image References)
 
